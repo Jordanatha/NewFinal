@@ -16,11 +16,11 @@ class Calc {
 		// to set the basic calculation : + - * :
 		void setFunction (string, string);
 		// to set the power calculation : ^
-		void setPowerFunction (int, int, float);
+		void setPowerFunction (string, string);
 		// to set the square root calculation
-		void setSqrtFunction (int, float);
+		void setSqrtFunction (string);
 		// to set the logarithm calculation
-		void setLogFunction (float, float);
+		void setLogFunction (string);
 		// to return sum result from numbers that user input in the main function
 		double getSumFunction ();
 		// to return min result from numbers that user input in the main function
@@ -35,19 +35,15 @@ class Calc {
 		double getSqrtFunction ();
 		// to return the logarithm result from numbers that user input in the main function
 		double getLogFunction ();
+		// to set the degree calculation : sin(x), cos(x), tan(x)
+		void setDegreeFunction (string);
+		// to return the sin(x) result from number that user input in the main function
+		double getSinFunction ();
+		// to return the cos(x) result from number that user input in the main function
+		double getCosFunction ();
+		// to return the tan(x) result from number that user input in the main function
+		double getTanFunction ();
 };
 
-class Degree : public Calc {
-	public :
-		
-	// to set the degree calculation : sin(x), cos(x), tan(x)
-	void setDegreeFunction (float, float);
-	// to return the sin(x) result from number that user input in the main function
-	double getSinFunction ();
-	// to return the cos(x) result from number that user input in the main function
-	double getCosFunction ();
-	// to return the tan(x) result from number that user input in the main function
-	double getTanFunction ();
-};
 
 #endif

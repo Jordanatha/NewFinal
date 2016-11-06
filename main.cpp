@@ -10,15 +10,15 @@ using namespace std;
 int main (){
 	
 	Calc obj;
-	Degree obj1;
 	char choice;
 	int number;
 	float num, num1, num2;
 	float total;
-	string Num1, Num2;
+	string Num1, Num2 , Num;
 	ofstream file;
 	
 	cout << "========= WELCOME TO MY CALCULATOR =========" << endl;
+	// MENU.
 	do {
 	cout << "Enter math operation" << endl ;
 	cout << "1. +" << endl;
@@ -34,7 +34,7 @@ int main (){
 	cout << "Please input the number (1-10) : ";
 	cin  >> number;
 	cout << endl ;
-	
+	// connects each number with each function and save to the "History.txt"
 	switch (number){
 		case 1:
 			cout << "Num 1 + Num 2 : " << endl;
@@ -42,7 +42,7 @@ int main (){
 			cin >> Num2;
 			obj.setFunction (Num1, Num2);
 			file.open ("History.txt");
-			file << "The result is : " << obj.getSumFunction() << endl << endl;
+			file << "Num1 + Num2 = " << obj.getSumFunction() << endl << endl;
 			cout << "The result is : " << obj.getSumFunction() << endl << endl;
 			file.close ();
 			break;
@@ -53,7 +53,7 @@ int main (){
 			cin >> Num2;
 			obj.setFunction(Num1, Num2);
 			file.open ("History.txt");
-			file <<"The result is : " << obj.getMinFunction() << endl << endl;
+			file <<"Num 1 - Num 2 = " << obj.getMinFunction() << endl << endl;
 			cout << "The result is : " << obj.getMinFunction() << endl << endl;
 			file.close ();
 			break;
@@ -64,7 +64,7 @@ int main (){
 			cin >> Num2;
 			obj.setFunction(Num1, Num2);
 			file.open ("History.txt");
-			file << "The result is : " << obj.getDivisionFunction() << endl << endl;
+			file << "Num 1 : Num 2 = " << obj.getDivisionFunction() << endl << endl;
 			cout << "The result is : " << obj.getDivisionFunction() << endl << endl;
 			file.close();
 			break;
@@ -75,70 +75,70 @@ int main (){
 			cin >> Num2;
 			obj.setFunction(Num1, Num2);
 			file.open ("History.txt");
-			file << "The result is : " << obj.getMultiplyFunction() << endl << endl;
+			file << "Num 1 * Num 2 = " << obj.getMultiplyFunction() << endl << endl;
 			cout << "The result is : " << obj.getMultiplyFunction() << endl << endl;
 			file.close ();
 			break;
 			
 		case 5:
 			cout << "Enter Degree : ";
-			cin >> num;
-			obj1.setDegreeFunction(num, total);
+			cin >> Num;
+			obj.setDegreeFunction(Num);
 			file.open ("History.txt");
-			file << "Sin of (" << num << ") is : " << obj1.getSinFunction() << endl << endl;
-			cout << "Sin of (" << num << ") is : " << obj1.getSinFunction() << endl << endl;
+			file << "Sin of (" << Num << ") is : " << obj.getSinFunction() << endl << endl;
+			cout << "Sin of (" << Num << ") is : " << obj.getSinFunction() << endl << endl;
 			file.close ();
 			break;
 			
 		case 6:
 			cout << "Enter Degree : ";
-			cin >> num;
-			obj1.setDegreeFunction(num, total);
+			cin >> Num;
+			obj.setDegreeFunction(Num);
 			file.open ("History.txt");
-			file << "Cos of (" << num << ") is : " << obj1.getCosFunction() << endl << endl;
-			cout << "Cos of (" << num << ") is : " << obj1.getCosFunction() << endl << endl;
+			file << "Cos of (" << Num << ") is : " << obj.getCosFunction() << endl << endl;
+			cout << "Cos of (" << Num << ") is : " << obj.getCosFunction() << endl << endl;
 			file.close ();
 			break;
 			
 		case 7:
 			cout << "Enter Degree : ";
-			cin >> num;
-			obj1.setDegreeFunction(num, total);
+			cin >> Num;
+			obj.setDegreeFunction(Num);
 			file.open ("History.txt");
-			file << "Tan of  (" << num << ") is : " << obj1.getTanFunction() << endl << endl;
-			cout << "Tan of  (" << num << ") is : " << obj1.getTanFunction() << endl << endl;
+			file << "Tan of  (" << Num << ") is : " << obj.getTanFunction() << endl << endl;
+			cout << "Tan of  (" << Num << ") is : " << obj.getTanFunction() << endl << endl;
 			file.close ();
 			break;
 			
 		case 8:
 			cout << "Number : ";
-			cin >> num1;
+			cin >> Num1;
 			cout << "To the power of : ";
-			cin >> num2;
-			obj.setPowerFunction(num1, num2, total);
+			cin >> Num2;
+			obj.setPowerFunction(Num1, Num2);
 			file.open ("History.txt");
-			file << "The result is : " << obj.getPowerFunction() << endl << endl;
+			file << Num1 << " to the power of " << Num2 << " is : " << obj.getPowerFunction() << endl << endl;
 			cout << "The result is : " << obj.getPowerFunction() << endl << endl;
 			file.close ();
 			break;
 		
 		case 9:
 			cout << "Enter Number : ";
-			cin >> num;
-			obj.setSqrtFunction(num, total);
+			cin >> Num;
+			obj.setSqrtFunction(Num);
 			file.open ("History.txt");
-			file << "Squaret root of " << num << " is : " << obj.getSqrtFunction() << endl << endl;
-			cout << "Squaret root of " << num << " is : " << obj.getSqrtFunction() << endl << endl;
+			file << "Squaret root of " << Num << " is : " << obj.getSqrtFunction() << endl << endl;
+			cout << "Squaret root of " << Num << " is : " << obj.getSqrtFunction() << endl << endl;
 			file.close ();
 			break;
 			 
 		case 10:
 			cout << "Enter Number : ";
-			cin >> num;
-			obj.setLogFunction(num, total);
+			cin >> Num;
+			obj.setLogFunction(Num);
 			file.open ("History.txt");
-			file << "Log (" << num << ") is : " << obj.getLogFunction() << endl << endl;
-			cout << "Log (" << num << ") is : " << obj.getLogFunction() << endl << endl;
+			file << "Log (" << Num << ") is : " << obj.getLogFunction() << endl << endl;
+			cout << "Log (" << Num << ") is : " << obj.getLogFunction() << endl << endl;
 			file.close();
 			break;
 		
@@ -152,5 +152,8 @@ int main (){
 	cin >> choice;
 }
 	while (choice == 'y' || choice == 'Y');
+	if (choice == 'N' || choice == 'n'){
+		cout << "Thank You!!";
+	}
 }
 

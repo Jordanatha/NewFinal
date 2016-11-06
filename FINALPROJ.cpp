@@ -48,30 +48,44 @@ double Calc :: getMultiplyFunction (){
 	return total;
 }
 
-void Degree :: setDegreeFunction (float num, float total){
-	this -> num = num;
-	this -> total = total;
+void Calc :: setDegreeFunction (string word3){
+	if(word3 == "Ans" || word3 == "ans"){
+		num = total;
+	}
+	
+	else {
+	this -> num = stof(word3);
+	}
 }
 
-double Degree :: getSinFunction(){
+double Calc :: getSinFunction(){
 	total = sin (num * PI /180);
 	return total;
 }
 
-double Degree :: getCosFunction (){
+double Calc :: getCosFunction (){
 	total = cos (num * PI/180);
 	return total;
 }
 
-double Degree :: getTanFunction(){
+double Calc :: getTanFunction(){
 	total = tan (num * PI /180); 
 	return total;
 }
 
-void Calc :: setPowerFunction (int num1, int num2, float total){
-	this -> num1 = num1;
-	this -> num2 = num2;
-	this -> total = total;
+void Calc :: setPowerFunction (string word1, string word2){
+	if(word1 == "Ans" || word1 == "ans"){
+		num1 = total;
+		num2 = stof(word2);
+	}
+	else if(word2 == "Ans" || word2 == "ans"){
+		num2 = total;
+		num1 = stof(word1);
+	}
+	else{
+	this -> num1 = stof(word1);
+	this -> num2 = stof(word2);
+	}
 }
 
 double Calc :: getPowerFunction (){
@@ -79,9 +93,15 @@ double Calc :: getPowerFunction (){
 	return total;
 }
 
-void Calc :: setSqrtFunction(int num, float total){
-	this -> num = num;
+void Calc :: setSqrtFunction(string word3){
+	if(word3 == "Ans" || word3 == "ans"){
+		num = total;
+	}
+	
+	else {
+	this -> num = stof(word3);
 	this -> total = total;
+	}
 }
 
 double Calc :: getSqrtFunction (){
@@ -89,9 +109,15 @@ double Calc :: getSqrtFunction (){
 	return total;
 }
 
-void Calc :: setLogFunction (float num, float total){
-	this -> num = num;
+void Calc :: setLogFunction (string word3){
+	if(word3 == "Ans" || word3 == "ans"){
+		num = total;
+	}
+	
+	else {
+	this -> num = stof(word3);
 	this -> total = total;
+	}
 }
 double Calc :: getLogFunction (){
 	total = log10(num);
