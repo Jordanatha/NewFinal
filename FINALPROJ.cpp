@@ -1,3 +1,5 @@
+//THIS FILE INCLUDES ALL THE FUNCTIONS THAT USED TO BE WORKED HERE//
+
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -14,6 +16,7 @@ Calc :: Calc (){
 }
 
 void Calc :: setFunction (string word1, string word2){
+	// for the "Ans" feature //
 	if(word1 == "Ans" || word1 == "ans"){
 		num1 = total;
 		num2 = stof(word2);

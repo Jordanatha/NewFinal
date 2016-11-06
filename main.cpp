@@ -155,5 +155,7 @@ int main (){
 	if (choice == 'N' || choice == 'n'){
 		cout << "Thank You!!";
 	}
+
+return 0;
 }
 
